@@ -2460,12 +2460,12 @@ class AppsPageState extends State<AppsPage> with TickerProviderStateMixin {
                 ),
                 controller: scrollController,
                 slivers: <Widget>[
-                  ValueListenableBuilder(
-                    valueListenable: controller,
-                    builder: (context, states, loadingIndicator) {
+                  ListenableBuilder(
+                    listenable: controller,
+                    builder: (context, loadingIndicator) {
                       final bottom = CustomAppBar.buildBottomPullToRefresh(
                         context: context,
-                        states: states,
+                        states: controller,
                         child: loadingIndicator!,
                       );
                       return buildLinearProgressIndicator(

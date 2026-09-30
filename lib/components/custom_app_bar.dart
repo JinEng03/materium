@@ -107,7 +107,7 @@ class CustomAppBar extends StatefulWidget {
   static PreferredSizeWidget buildBottomPullToRefresh({
     required BuildContext context,
     required CustomPullToRefreshStates states,
-    double maxHeight = CustomPullToRefresh.defaultThreshold,
+    double maxHeight = PullToRefreshController.defaultThreshold,
     required Widget child,
   }) {
     final isRefreshing = states.isRefreshing;

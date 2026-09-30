@@ -23,17 +23,17 @@ dependencies:
   animation:
     git:
       url: https://github.com/deminearchiver/dart-flutter-packages.git
-      ref: 2cabf358cb9d954e70ff2f70ffa2962d255d11a4
+      ref: 96810b54ac781cd3b5164d34d5498fb82e7e544d
       path: packages/framework/animation
   layout:
     git:
       url: https://github.com/deminearchiver/dart-flutter-packages.git
-      ref: 2cabf358cb9d954e70ff2f70ffa2962d255d11a4
+      ref: 96810b54ac781cd3b5164d34d5498fb82e7e544d
       path: packages/framework/layout
   material:
     git:
       url: https://github.com/deminearchiver/dart-flutter-packages.git
-      ref: 2cabf358cb9d954e70ff2f70ffa2962d255d11a4
+      ref: 96810b54ac781cd3b5164d34d5498fb82e7e544d
       path: packages/framework/material
 
   # Git dependencies (3P)
@@ -64,6 +64,7 @@ dependencies:
   collection: ^1.19.1
   connectivity_plus: ^7.3.1
   crypto: ^3.0.7
+  cupertino_ui: ^1.1.1
   device_info_ffi: ^2.0.1
   drift_flutter: ^0.3.1
   drift_sqflite: ^2.0.1
@@ -88,6 +89,7 @@ dependencies:
   json_annotation: ^4.12.0
   linked_layouts: ^0.6.0
   markdown: ^7.3.1
+  material_ui: ^1.5.0
   meta: ^1.19.0
   motor: ^1.1.0
   path_provider: ^2.1.6
@@ -119,10 +121,21 @@ dev_dependencies:
   slang_build_runner: ^4.19.0
 
 dependency_overrides:
+  # Git dependencies
+  androidx_graphics_shapes:
+    git:
+      url: https://github.com/deminearchiver/dart-flutter-packages.git
+      ref: 96810b54ac781cd3b5164d34d5498fb82e7e544d
+      path: packages/androidx_graphics_shapes
+  material_3p:
+    git:
+      url: https://github.com/deminearchiver/dart-flutter-packages.git
+      ref: 96810b54ac781cd3b5164d34d5498fb82e7e544d
+      path: packages/material_3p
+
   # Hosted dependencies
   archive: ^4.0.9 # fastforge uses outdated version
   device_info_plus: ^13.2.0 # Needed for unknown reasons
-  libmonet: 2.0.0-dev.19
   material_color_utilities: ^0.13.0 # Flutter pinned dependency
   uuid: ^4.6.0 # fastforge uses outdated version
 

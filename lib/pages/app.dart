@@ -2023,9 +2023,9 @@ class _AppPageState extends State<AppPage> {
                     parent: controller.createScrollPhysics(),
                   ),
                   slivers: [
-                    ValueListenableBuilder(
-                      valueListenable: controller,
-                      builder: (context, states, child) => _AppPageAppBar(
+                    ListenableBuilder(
+                      listenable: controller,
+                      builder: (context, child) => _AppPageAppBar(
                         expandedContainerColor: backgroundColor,
                         collapsedContainerColor: backgroundColor,
                         leading: const DeveloperPageBackButton(),
@@ -2037,7 +2037,7 @@ class _AppPageState extends State<AppPage> {
                         ),
                         bottom: CustomAppBar.buildBottomPullToRefresh(
                           context: context,
-                          states: states,
+                          states: controller,
                           child: child!,
                         ),
                       ),

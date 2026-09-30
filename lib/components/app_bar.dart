@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:materium/flutter.dart';
 import 'package:materium/components/sliver_dynamic_header_basic.dart';
 
 // TODO(deminearchiver): make everything actually work.

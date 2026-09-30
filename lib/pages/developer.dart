@@ -2449,8 +2449,9 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                           return Surface(
                             clipBehavior: Clip.antiAlias,
                             shape: RoundedPolygonBorder(
-                              polygon: MaterialShapes.cookie12Sided
-                                  .transformedWithMatrix4(_rotationMatrix),
+                              polygon: MaterialShapes.cookie12Sided.transformed(
+                                _rotationMatrix.asPointTransformer(),
+                              ),
                             ),
                             color: colorTheme.surface,
                             child: child!,
@@ -2583,9 +2584,9 @@ class _MaterialDemoViewState extends State<_MaterialDemoView>
           builder: (context, controller) => CustomScrollView(
             physics: controller.createScrollPhysics(),
             slivers: [
-              ValueListenableBuilder(
-                valueListenable: controller,
-                builder: (context, states, child) => CustomAppBar(
+              ListenableBuilder(
+                listenable: controller,
+                builder: (context, child) => CustomAppBar(
                   type: .small,
                   expandedContainerColor: backgroundColor,
                   collapsedContainerColor: backgroundColor,
@@ -2602,7 +2603,7 @@ class _MaterialDemoViewState extends State<_MaterialDemoView>
                   title: const Text("Material 3 Expressive"),
                   bottom: CustomAppBar.buildBottomPullToRefresh(
                     context: context,
-                    states: states,
+                    states: controller,
                     maxHeight: _indicatorMaxDistance,
                     child: child!,
                   ),
@@ -4277,7 +4278,7 @@ class _ShapeLibraryViewState extends State<_ShapeLibraryView> {
 String _pathFromCubics({
   required bool repeatPath,
   required bool closePath,
-  required List<Cubic> cubics,
+  required List<CubicBezier> cubics,
   required double rotationPivotX,
   required double rotationPivotY,
 }) {

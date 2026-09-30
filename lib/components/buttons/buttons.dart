@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart' as flutter;
+import 'package:material_ui/material_ui.dart' as flutter;
 import 'package:materium/flutter.dart';
 
 // Utilities
